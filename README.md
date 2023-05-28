@@ -24,13 +24,14 @@ In [MICCAI, 2023](https://conferences.miccai.org/2023/en/), Early accept (accept
     * [(b) FOLs for MoIE-CXR](#b-fols-for-moie-cxr)
     * [(c) Checkpoints MoIE-CXR](#c-checkpoints-moie-cxr)
 6. [Finetune for Stanford-CXR](#generated-local-explanations)
-    * [(a) Generating dataset for Semi-supervised learning (SSL)](#a-generating-dataset-for-semi-supervised-learning-ssl)
-    * [(b) Finetuning MoIE-CXR for transfer learning](#b-finetuning-moie-cxr-for-transfer-learning)
-    * [(c) Generate FOLs for the samples of Stanford CXR](#c-generate-fols-for-the-samples-of-stanford-cxr)
-7. [Suggestions](#suggestions)
-8. [How to Cite](#how-to-cite)
-9. [License and copyright](#license-and-copyright)
-10. [Contact](#contact)
+    * [(a) Finetuned checkpoints of Stanford-CXR](#a-finetuned-checkpoints-of-stanford-cxr)
+    * [(b) Generating dataset for Semi-supervised learning (SSL)](#b-generating-dataset-for-semi-supervised-learning-ssl)
+    * [(c) Finetuning MoIE-CXR for transfer learning](#c-finetuning-moie-cxr-for-transfer-learning)
+    * [(d) Generate FOLs for the samples of Stanford-CXR](#d-generate-fols-for-the-samples-of-stanford-cxr)
+8. [Suggestions](#suggestions)
+9. [How to Cite](#how-to-cite)
+10. [License and copyright](#license-and-copyright)
+11. [Contact](#contact)
 
 ## Objective
 
@@ -137,21 +138,26 @@ MoIE-CXR, refer below:
 
 ## Finetune for Stanford-CXR
 
-### (a) Generating dataset for Semi-supervised learning (SSL)
+### (a) Finetuned checkpoints of Stanford-CXR
 
-As mentioned in the Algorithm 1, we need to generate the concepts for Stanford CXR using Semi-supervised learning (SSL),
+Refer to the [link](https://drive.google.com/drive/u/1/folders/13rO09zBKiZwni7fksk74b9rav_sriXY3) for the finetuned BB
+of Stanford-CXR.
+
+### (b) Generating dataset for Semi-supervised learning (SSL)
+
+As mentioned in the Algorithm 1, we need to generate the concepts for Stanford-CXR using Semi-supervised learning (SSL),
 as Stanford-CXR does not have any concept annotations or radiological reports associated to it. Also, to prove
-MoIE-CXR's efficiency, we use a subset of training data of Stanford CXR. Refer to
+MoIE-CXR's efficiency, we use a subset of training data of Stanford-CXR. Refer to
 the [link](https://drive.google.com/drive/u/1/folders/1Kzt3WQPqbei2407wpqOUYOCYubeQETcK) to get csvs with details of the
-subset of 5000, 11000, 15000, 20000 and 30000 training samples of Stanford CXR and place it in the directory
+subset of 5000, 11000, 15000, 20000 and 30000 training samples of Stanford-CXR and place it in the directory
 `Path/out/stanford_cxr/BB/lr_0.01_epochs_5_loss_CE/densenet121/<disease>`. For example, to get the details of 15000
-training samples of cardiomegaly of Stanford CXR, place the `master_tot_15000.csv` file in the directory
+training samples of cardiomegaly of Stanford-CXR, place the `master_tot_15000.csv` file in the directory
 `Path/out/stanford_cxr/BB/lr_0.01_epochs_5_loss_CE/densenet121/cardiomegaly`. Now the `lr` and the `epoch` in the path
-is the learning rate and epoch at which the BB for Stanford CXR has been trained. You can get it from the 1st command of
+is the learning rate and epoch at which the BB for Stanford-CXR has been trained. You can get it from the 1st command of
 each script in the folder [`./src/scripts/scripts_stanford_cxr`](./src/scripts/scripts_stanford_cxr).
 
 If you want to generate the csvs with the samples of Stanford-CXR, use the command to generate and save the details of
-30000 samples from the training data of Stanford CXR:
+30000 samples from the training data of Stanford-CXR:
 
 ```
 python .src/codebase/prepare_df_SSL_main.py \
@@ -179,7 +185,7 @@ While training using SSL, `master_tot_15000.csv` file is required in the dataloa
 
 These 4 numbers will add up to `--tot_samples` in the subsequent scripts in next stage.
 
-### (b) Finetuning MoIE-CXR for transfer learning
+### (c) Finetuning MoIE-CXR for transfer learning
 
 * Go the [`./src/scripts/scripts_stanford_cxr`](./src/scripts/scripts_stanford_cxr) folder and get the training scripts.
   For all the diseases in for
@@ -193,16 +199,16 @@ These 4 numbers will add up to `--tot_samples` in the subsequent scripts in next
   the following variable `--tot_samples` in those scripts.
 * The naming convention and the paths to be replaced is mentioned in the script. Follow them carefully.
 * Run them sequentially.
-* Also, for training MoIE-CXR using the Stanford CXR in the
+* Also, for training MoIE-CXR using the Stanford-CXR in the
   script, [`./src/codebase/train_explainer_cxr_domain_transfer.py`](./src/codebase/train_explainer_cxr_domain_transfer.py)
   , the variable `--initialize_w_mimic` signifies whether we finetune both the selectors (pi) and the experts (g) or
   not.
     * if `--initialize_w_mimic` == "y", we finetune both the selectors (pi) and the experts (g).
     * if `--initialize_w_mimic` == "n", we finetune only the selectors (pi), not the experts (g).
 
-### (c) Generate FOLs for the samples of Stanford CXR
+### (d) Generate FOLs for the samples of Stanford-CXR
 
-Refer below for generating FOLs for the samples of Stanford CXR where 15000 training samples were used for finetuning
+Refer below for generating FOLs for the samples of Stanford-CXR where 15000 training samples were used for finetuning
 for the disease edema. Modify `tot_samples` and `disease` for other configurations.
 
 ```
