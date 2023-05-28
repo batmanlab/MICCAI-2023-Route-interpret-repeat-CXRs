@@ -19,7 +19,7 @@ In [MICCAI, 2023](https://conferences.miccai.org/2023/en/), Early accept (accept
     * [(b) Downloading MIMIC-CXR](#a-downloading-mimic-cxr)
     * [(b) Downloading Stanford-CXR](#b-downloading-stanford-cxr)
 4. [Preprocessing MIMIC-CXR](#preprocessing-mimic-cxr)
-5. [Training MoiE-CXR](#training-moie-cxr)
+5. [Training MoIE-CXR](#training-moie-cxr)
     * [(a) Running MoIE-CXR](#a-running-moie-cxr)
     * [(b) FOLs for MoIE-CXR](#b-fols-for-moie-cxr)
     * [(c) Checkpoints MoIE-CXR](#c-checkpoints-moie-cxr)
@@ -94,7 +94,7 @@ python ./src/codebase/data_preprocessing/mimic-cxr/miccai-main/preprocessing/adj
 Step 3 will be the concepts for training MoIE-CXR. For more details please follow
 the [AGXNet Repository](https://github.com/batmanlab/AGXNet).
 
-## Training MoiE-CXR
+## Training MoIE-CXR
 
 ### (a) Running MoIE-CXR
 
