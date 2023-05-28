@@ -35,11 +35,10 @@ In [MICCAI, 2023](https://conferences.miccai.org/2023/en/), Early accept (accept
 
 ## Objective
 
-In this paper, aim to apply MoIE (in ICML, 2023) to Chest-X-rays (MIMIC-CXR). Due to class imbalance in large CXR
+In this paper, we aim to apply MoIE (in ICML, 2023) to Chest-X-rays (MIMIC-CXR). Due to class imbalance in large CXR
 datasets, early experts in MoIE tend to cover all samples with disease present while ignoring disease subgroups and
 pathological heterogeneity. We address this problem by estimating the class-stratified coverage from the total data
-coverage. Then we utilize our method for efficient transfer learning to a target domain (Stanford-CXR). Thus,
-illustration of our method is summarized below:
+coverage. Then we utilize our method for efficient transfer learning to a target domain (Stanford-CXR). Illustration of our method is summarized below:
 
 <img src='images/gif.gif'><br/>
 
