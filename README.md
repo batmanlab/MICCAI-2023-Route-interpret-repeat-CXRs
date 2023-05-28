@@ -155,7 +155,7 @@ training samples of cardiomegaly of Stanford-CXR, place the `master_tot_15000.cs
 is the learning rate and epoch at which the BB for Stanford-CXR has been trained. You can get it from the 1st command of
 each script in the folder [`./src/scripts/scripts_stanford_cxr`](./src/scripts/scripts_stanford_cxr).
 
-If you want to generate the csvs with the samples of Stanford-CXR, use the command to generate and save the details of
+If you want to generate the csvs with the samples of Stanford-CXR, here is an example command to generate and save the details of
 30000 samples from the training data of Stanford-CXR:
 
 ```
