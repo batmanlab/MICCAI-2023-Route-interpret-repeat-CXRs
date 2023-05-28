@@ -1,0 +1,149 @@
+=====================>>>>> Calculating performance for ICML paper <<<<<<=====================
+densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.5_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4
+Device: cuda
+########################
+['trachea', 'left_hilar', 'right_hilar', 'hilar_unspec', 'left_pleural', 'right_pleural', 'pleural_unspec', 'heart_size', 'heart_border', 'left_diaphragm', 'right_diaphragm', 'diaphragm_unspec', 'retrocardiac', 'lower_left_lobe', 'upper_left_lobe', 'lower_right_lobe', 'middle_right_lobe', 'upper_right_lobe', 'left_lower_lung', 'left_mid_lung', 'left_upper_lung', 'left_apical_lung', 'left_lung_unspec', 'right_lower_lung', 'right_mid_lung', 'right_upper_lung', 'right_apical_lung', 'right_lung_unspec', 'lung_apices', 'lung_bases', 'left_costophrenic', 'right_costophrenic', 'costophrenic_unspec', 'cardiophrenic_sulcus', 'mediastinal', 'spine', 'rib', 'right_atrium', 'right_ventricle', 'aorta', 'svc', 'interstitium', 'parenchymal', 'cavoatrial_junction', 'stomach', 'clavicle', 'effusion', 'opacity', 'edema', 'atelectasis', 'tube', 'consolidation', 'process', 'abnormality', 'enlarge', 'tip', 'low', 'line', 'congestion', 'catheter', 'cardiomegaly', 'fracture', 'air', 'tortuous', 'lead', 'disease', 'calcification', 'prominence', 'device', 'engorgement', 'picc', 'clip', 'elevation', 'nodule', 'wire', 'fluid', 'degenerative', 'pacemaker', 'thicken', 'marking', 'scar', 'blunt', 'loss', 'widen', 'collapse', 'density', 'emphysema', 'aerate', 'mass', 'crowd', 'infiltrate', 'obscure', 'deformity', 'hernia', 'drainage', 'distention', 'shift', 'stent', 'pressure', 'lesion', 'finding', 'borderline', 'hardware', 'dilation', 'chf', 'redistribution', 'aspiration']
+107
+0.01
+0.5
+densenet121_lr_0.1_SGD_temperature-lens_7.6_cov_0.1_alpha_0.5_selection-threshold_0.5_lm_32.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4
+['model_seq_epoch_123.pth.tar']
+########################
+############################################
+ite: 1 ==========================>
+############################################
+tensor_alpha size: torch.Size([2, 90])
+tensor_alpha_norm size: torch.Size([2, 90])
+tensor_concept_mask size: torch.Size([2, 90])
+test_mask_by_pi size: torch.Size([24072])
+
+
+test_out_put_target size: torch.Size([24072])
+test_out_put_class_pred size: torch.Size([24072, 2])
+test_out_put_class_bb_pred size: torch.Size([24072, 2])
+test_concepts size: torch.Size([24072, 90])
+test_ground_truth_concepts size: torch.Size([24072, 90])
+# concepts: 90
+
+
+{'test_g_acc': 86.28992928554011, 'test_g_auroc': 0.8436327879469689, 'test_g_aurpc': 0.4501271885989378, 'test_g_recall': 0.8628992928554011, 'test_bb_auroc': 0.8469682215638789, 'test_selected': 16404.0, 'test_rejected': 7668.0, 'test_emperical_coverage': 0.6814556331006979, 'test_true_coverage': 0.5, 'test_positive_samples_gt': tensor(2325), 'test_postive_samples_pred': tensor(2325), 'test_postive_samples_pred_correct': tensor(447)}
+Iteration: 1, Target: torch.Size([16404]), Pred_g: torch.Size([16404, 2]), Pred bb: torch.Size([16404, 2])
+densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4
+Device: cuda
+########################
+['trachea', 'left_hilar', 'right_hilar', 'hilar_unspec', 'left_pleural', 'right_pleural', 'pleural_unspec', 'heart_size', 'heart_border', 'left_diaphragm', 'right_diaphragm', 'diaphragm_unspec', 'retrocardiac', 'lower_left_lobe', 'upper_left_lobe', 'lower_right_lobe', 'middle_right_lobe', 'upper_right_lobe', 'left_lower_lung', 'left_mid_lung', 'left_upper_lung', 'left_apical_lung', 'left_lung_unspec', 'right_lower_lung', 'right_mid_lung', 'right_upper_lung', 'right_apical_lung', 'right_lung_unspec', 'lung_apices', 'lung_bases', 'left_costophrenic', 'right_costophrenic', 'costophrenic_unspec', 'cardiophrenic_sulcus', 'mediastinal', 'spine', 'rib', 'right_atrium', 'right_ventricle', 'aorta', 'svc', 'interstitium', 'parenchymal', 'cavoatrial_junction', 'stomach', 'clavicle', 'effusion', 'opacity', 'edema', 'atelectasis', 'tube', 'consolidation', 'process', 'abnormality', 'enlarge', 'tip', 'low', 'line', 'congestion', 'catheter', 'cardiomegaly', 'fracture', 'air', 'tortuous', 'lead', 'disease', 'calcification', 'prominence', 'device', 'engorgement', 'picc', 'clip', 'elevation', 'nodule', 'wire', 'fluid', 'degenerative', 'pacemaker', 'thicken', 'marking', 'scar', 'blunt', 'loss', 'widen', 'collapse', 'density', 'emphysema', 'aerate', 'mass', 'crowd', 'infiltrate', 'obscure', 'deformity', 'hernia', 'drainage', 'distention', 'shift', 'stent', 'pressure', 'lesion', 'finding', 'borderline', 'hardware', 'dilation', 'chf', 'redistribution', 'aspiration']
+107
+0.01
+0.2
+['densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.5_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4']
+['model_seq_epoch_123.pth.tar', 'model_seq_epoch_113.pth.tar']
+########################
+############################################
+ite: 2 ==========================>
+############################################
+tensor_alpha size: torch.Size([2, 90])
+tensor_alpha_norm size: torch.Size([2, 90])
+tensor_concept_mask size: torch.Size([2, 90])
+test_mask_by_pi size: torch.Size([24072])
+
+
+test_out_put_target size: torch.Size([24072])
+test_out_put_class_pred size: torch.Size([24072, 2])
+test_out_put_class_bb_pred size: torch.Size([24072, 2])
+test_concepts size: torch.Size([24072, 90])
+test_ground_truth_concepts size: torch.Size([24072, 90])
+# concepts: 90
+
+
+{'test_g_acc': 81.34899448300408, 'test_g_auroc': 0.8517805307649752, 'test_g_aurpc': 0.8602015138799145, 'test_g_recall': 0.8134899448300409, 'test_bb_auroc': 0.8550983656241375, 'test_selected': 5619.0, 'test_rejected': 18453.0, 'test_emperical_coverage': 0.23342472582253238, 'test_true_coverage': 0.2, 'test_positive_samples_gt': tensor(3277), 'test_postive_samples_pred': tensor(3277), 'test_postive_samples_pred_correct': tensor(3169)}
+Iteration: 2, Target: torch.Size([5619]), Pred_g: torch.Size([5619, 2]), Pred bb: torch.Size([5619, 2])
+densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.05_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4
+Device: cuda
+########################
+['trachea', 'left_hilar', 'right_hilar', 'hilar_unspec', 'left_pleural', 'right_pleural', 'pleural_unspec', 'heart_size', 'heart_border', 'left_diaphragm', 'right_diaphragm', 'diaphragm_unspec', 'retrocardiac', 'lower_left_lobe', 'upper_left_lobe', 'lower_right_lobe', 'middle_right_lobe', 'upper_right_lobe', 'left_lower_lung', 'left_mid_lung', 'left_upper_lung', 'left_apical_lung', 'left_lung_unspec', 'right_lower_lung', 'right_mid_lung', 'right_upper_lung', 'right_apical_lung', 'right_lung_unspec', 'lung_apices', 'lung_bases', 'left_costophrenic', 'right_costophrenic', 'costophrenic_unspec', 'cardiophrenic_sulcus', 'mediastinal', 'spine', 'rib', 'right_atrium', 'right_ventricle', 'aorta', 'svc', 'interstitium', 'parenchymal', 'cavoatrial_junction', 'stomach', 'clavicle', 'effusion', 'opacity', 'edema', 'atelectasis', 'tube', 'consolidation', 'process', 'abnormality', 'enlarge', 'tip', 'low', 'line', 'congestion', 'catheter', 'cardiomegaly', 'fracture', 'air', 'tortuous', 'lead', 'disease', 'calcification', 'prominence', 'device', 'engorgement', 'picc', 'clip', 'elevation', 'nodule', 'wire', 'fluid', 'degenerative', 'pacemaker', 'thicken', 'marking', 'scar', 'blunt', 'loss', 'widen', 'collapse', 'density', 'emphysema', 'aerate', 'mass', 'crowd', 'infiltrate', 'obscure', 'deformity', 'hernia', 'drainage', 'distention', 'shift', 'stent', 'pressure', 'lesion', 'finding', 'borderline', 'hardware', 'dilation', 'chf', 'redistribution', 'aspiration']
+107
+0.01
+0.05
+['densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.5_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4', 'densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4']
+['model_seq_epoch_123.pth.tar', 'model_seq_epoch_113.pth.tar', 'model_seq_epoch_107.pth.tar']
+########################
+############################################
+ite: 3 ==========================>
+############################################
+tensor_alpha size: torch.Size([2, 90])
+tensor_alpha_norm size: torch.Size([2, 90])
+tensor_concept_mask size: torch.Size([2, 90])
+test_mask_by_pi size: torch.Size([24072])
+
+
+test_out_put_target size: torch.Size([24072])
+test_out_put_class_pred size: torch.Size([24072, 2])
+test_out_put_class_bb_pred size: torch.Size([24072, 2])
+test_concepts size: torch.Size([24072, 90])
+test_ground_truth_concepts size: torch.Size([24072, 90])
+# concepts: 90
+
+
+{'test_g_acc': 96.78334910122982, 'test_g_auroc': 0.9898744848257774, 'test_g_aurpc': 0.9565488377754177, 'test_g_recall': 0.967833491012299, 'test_bb_auroc': 0.9902023229674035, 'test_selected': 1057.0, 'test_rejected': 23015.0, 'test_emperical_coverage': 0.04390993685609834, 'test_true_coverage': 0.05, 'test_positive_samples_gt': tensor(272), 'test_postive_samples_pred': tensor(272), 'test_postive_samples_pred_correct': tensor(266)}
+Iteration: 3, Target: torch.Size([1057]), Pred_g: torch.Size([1057, 2]), Pred bb: torch.Size([1057, 2])
+/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/mimic_cxr/explainer/effusion/densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.05_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4/iter3/residual/selected/auroc
+Device: cuda
+########################
+['trachea', 'left_hilar', 'right_hilar', 'hilar_unspec', 'left_pleural', 'right_pleural', 'pleural_unspec', 'heart_size', 'heart_border', 'left_diaphragm', 'right_diaphragm', 'diaphragm_unspec', 'retrocardiac', 'lower_left_lobe', 'upper_left_lobe', 'lower_right_lobe', 'middle_right_lobe', 'upper_right_lobe', 'left_lower_lung', 'left_mid_lung', 'left_upper_lung', 'left_apical_lung', 'left_lung_unspec', 'right_lower_lung', 'right_mid_lung', 'right_upper_lung', 'right_apical_lung', 'right_lung_unspec', 'lung_apices', 'lung_bases', 'left_costophrenic', 'right_costophrenic', 'costophrenic_unspec', 'cardiophrenic_sulcus', 'mediastinal', 'spine', 'rib', 'right_atrium', 'right_ventricle', 'aorta', 'svc', 'interstitium', 'parenchymal', 'cavoatrial_junction', 'stomach', 'clavicle', 'effusion', 'opacity', 'edema', 'atelectasis', 'tube', 'consolidation', 'process', 'abnormality', 'enlarge', 'tip', 'low', 'line', 'congestion', 'catheter', 'cardiomegaly', 'fracture', 'air', 'tortuous', 'lead', 'disease', 'calcification', 'prominence', 'device', 'engorgement', 'picc', 'clip', 'elevation', 'nodule', 'wire', 'fluid', 'degenerative', 'pacemaker', 'thicken', 'marking', 'scar', 'blunt', 'loss', 'widen', 'collapse', 'density', 'emphysema', 'aerate', 'mass', 'crowd', 'infiltrate', 'obscure', 'deformity', 'hernia', 'drainage', 'distention', 'shift', 'stent', 'pressure', 'lesion', 'finding', 'borderline', 'hardware', 'dilation', 'chf', 'redistribution', 'aspiration']
+107
+0.01
+0.05
+['densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.5_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4', 'densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4']
+['model_seq_epoch_123.pth.tar', 'model_seq_epoch_113.pth.tar', 'model_seq_epoch_107.pth.tar']
+########################
+############################################
+ite: 3 ==========================>
+############################################
+test_mask_by_pi size: torch.Size([24072])
+
+
+test_out_put_target size: torch.Size([24072])
+test_out_put_class_pred size: torch.Size([24072, 2])
+test_out_put_class_bb_pred size: torch.Size([24072, 2])
+
+
+{'test_g_acc': 97.88092835519667, 'test_g_auroc': 0.9523809523809524, 'test_g_aurpc': 0.6635298344045262, 'test_g_recall': 0.9788092835519677, 'test_bb_auroc': 0.9671413736834298, 'test_selected': 991.0, 'test_rejected': 23081.0, 'test_emperical_coverage': 0.04116816218012631, 'test_true_coverage': 0.05, 'test_positive_samples_gt': tensor(28), 'test_postive_samples_pred': tensor(28), 'test_postive_samples_pred_correct': tensor(9)}
+
+Selected by residual sizes:
+Iteration: 3, Target: torch.Size([991]), Pred_g: torch.Size([991, 2]), Pred bb: torch.Size([991, 2])
+
+
+Disease: effusion, Sizes by MoIE:
+Size Target: torch.Size([23080]), Pred_g: torch.Size([23080, 2]), Pred bb: torch.Size([23080, 2])
+Sizes by MoIE + Residual:
+Size Target: torch.Size([24071]), Pred_g: torch.Size([24071, 2]), Pred bb: torch.Size([24071, 2])
+
+Output csv is saved at:
+/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/mimic_cxr/t/lr_0.01_epochs_60_loss_BCE_W_flattening_type_flatten_layer_features_denseblock4/densenet121/effusion/dataset_g
+########################### effusion ############################
+
+>>>>>>>>>>>>>>> MOIE Results: <<<<<<<<<<<<<<<<<<<<<
+Accuracy (g): 0.8556759098786828
+Auroc (g): 0.8691473265278588
+Aurpc (g): 0.7727941705462159
+Recall (g): 0.8556759098786828
+Accuracy BB (g): 0.859055459272097
+Auroc (g): 0.9106868883304005
+Aurpc (g): 0.7752236073588735
+Recall (g): 0.859055459272097
+Empirical coverage (g): 0.9588301275393627
+
+>>>>>>>>>>>>>>> MOIE + Residual Results: <<<<<<<<<<<<<<<<<<<<<
+Accuracy (with residual): 0.86074529516846
+Auroc (with residual): 0.9127341091124952
+Aurpc (with residual): 0.7718373836917357
+Recall (with residual): 0.86074529516846
+
+>>>>>>>>>>>>>>> Blackbox Results: <<<<<<<<<<<<<<<<<<<<<
+Accuracy BB: 0.8640687964770886
+Auroc BB: 0.9145241291247233
+Aurpc BB: 0.7740953160410069
+Recall BB: 0.8640687964770886
+##################################################################
+{'moie_emp_coverage': 0.9588301275393627, 'moie_acc': 0.8556759098786828, 'moie_auroc': 0.9091473265278588, 'moie_aurpc': 0.7727941705462159, 'moie_recall': 0.8556759098786828, 'moie_bb_acc': 0.859055459272097, 'moie_bb_auroc': 0.9106868883304005, 'moie_bb_aurpc': 0.7752236073588735, 'moie_bb_recall': 0.859055459272097, 'moie_r_acc': 0.86074529516846, 'moie_r_auroc': 0.9127341091124952, 'moie_r_aurpc': 0.7718373836917357, 'moie_r_recall': 0.86074529516846, 'moie_r_bb_acc': 0.8640687964770886, 'moie_r_bb_auroc': 0.9145241291247233, 'moie_r_bb_aurpc': 0.7740953160410069, 'moie_r_bb_recall': 0.8640687964770886}
+/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/mimic_cxr/t/lr_0.01_epochs_60_loss_BCE_W_flattening_type_flatten_layer_features_denseblock4/densenet121/effusion/dataset_g

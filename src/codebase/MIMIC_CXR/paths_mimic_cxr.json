@@ -1,0 +1,291 @@
+{
+  "effusion": {
+    "MoIE_paths": {
+      "iter1": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_486.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter2": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_180.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter3": {
+        "base_path": "densenet121_1028_lr_0.001_SGD_temperature-lens_7.6_cov_0.45_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_3030_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_9.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter4": {
+        "base_path": "densenet121_1028_lr_0.001_SGD_temperature-lens_7.6_cov_0.45_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_3030_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_203.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter5": {
+        "base_path": "densenet121_1028_lr_0.001_SGD_temperature-lens_7.6_cov_0.05_alpha_0.5_selection-threshold_0.5_lm_96.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_3030_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_87.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      }
+    },
+    "bb": {
+      "root_bb": "lr_0.01_epochs_60_loss_CE",
+      "checkpoint_bb": "g_best_model_epoch_8.pth.tar",
+      "img_size": 512,
+      "layer": "features_denseblock4",
+      "pool1": "average"
+    },
+    "t": {
+      "checkpoint_t_path": "lr_0.01_epochs_60_loss_BCE_W_flattening_type_flatten_layer_features_denseblock4",
+      "checkpoint_file": "g_best_model_epoch_10.pth.tar"
+    },
+    "params": {
+      "labels": [
+        "0 (No Effusion)",
+        "1 (Effusion)"
+      ]
+    }
+  },
+  "pneumothorax": {
+    "MoIE_paths": {
+      "iter1": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_226.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter2": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_17.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter3": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.25_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_2.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter4": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.25_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_40.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter5": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.25_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_47.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      }
+    },
+    "bb": {
+      "root_bb": "lr_0.01_epochs_60_loss_CE",
+      "checkpoint_bb": "g_best_model_epoch_4.pth.tar",
+      "img_size": 512,
+      "layer": "features_denseblock4",
+      "pool1": "average"
+    },
+    "t": {
+      "checkpoint_t_path": "lr_0.01_epochs_60_loss_BCE_W_flattening_type_flatten_layer_features_denseblock4",
+      "checkpoint_file": "g_best_model_epoch_16.pth.tar"
+    },
+    "params": {
+      "labels": [
+        "0 (No Pneumothorax)",
+        "1 (Pneumothorax)"
+      ]
+    }
+  },
+  "cardiomegaly": {
+    "MoIE_paths": {
+      "iter1": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_1024.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_384.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter2": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_1024.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_41.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter3": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.35_alpha_0.5_selection-threshold_0.5_lm_1024.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_169.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter4": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.3_alpha_0.5_selection-threshold_0.5_lm_1024.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_139.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      }
+    },
+    "bb": {
+      "root_bb": "lr_0.01_epochs_60_loss_CE",
+      "checkpoint_bb": "g_best_model_epoch_4.pth.tar",
+      "img_size": 512,
+      "layer": "features_denseblock4",
+      "pool1": "average"
+    },
+    "t": {
+      "checkpoint_t_path": "lr_0.01_epochs_60_loss_BCE_W_flattening_type_flatten_layer_features_denseblock4",
+      "checkpoint_file": "g_best_model_epoch_10.pth.tar"
+    },
+    "params": {
+      "labels": [
+        "0 (No Cardiomegaly)",
+        "1 (Cardiomegaly)"
+      ]
+    }
+  },
+  "pneumonia": {
+    "MoIE_paths": {
+      "iter1": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_153.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter2": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_5.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter3": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.35_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_42.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter4": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_10.0_cov_0.2_alpha_0.5_selection-threshold_0.5_lm_256.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_14.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      }
+    },
+    "t": {
+      "checkpoint_t_path": "lr_0.01_epochs_60_loss_BCE_W_flattening_type_flatten_layer_features_denseblock4",
+      "checkpoint_file": "g_best_model_epoch_16.pth.tar"
+    },
+    "bb": {
+      "root_bb": "lr_0.01_epochs_60_loss_CE",
+      "checkpoint_bb": "g_best_model_epoch_4.pth.tar",
+      "img_size": 512,
+      "layer": "features_denseblock4",
+      "pool1": "average"
+    },
+    "params": {
+      "labels": [
+        "0 (No Pneumonia)",
+        "1 (Pneumonia)"
+      ]
+    }
+  },
+  "edema": {
+    "MoIE_paths": {
+      "iter1": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.25_alpha_0.5_selection-threshold_0.5_lm_128.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_16.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter2": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.25_alpha_0.5_selection-threshold_0.5_lm_128.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_24.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter3": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.25_alpha_0.5_selection-threshold_0.5_lm_128.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_124.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter4": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.25_alpha_0.5_selection-threshold_0.5_lm_128.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_149.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      },
+      "iter5": {
+        "base_path": "densenet121_1028_lr_0.01_SGD_temperature-lens_7.6_cov_0.15_alpha_0.5_selection-threshold_0.5_lm_128.0_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_20.0_hidden-layers_2020_input-size-pi_2048_layer_layer4",
+        "prev_path": "",
+        "explainer_path": "explainer",
+        "output": "g_outputs",
+        "checkpoint_g": "model_seq_epoch_96.pth.tar",
+        "checkpoint_residual": "model_residual_best_model_epoch_1.pth.tar"
+      }
+    },
+    "bb": {
+      "root_bb": "lr_0.01_epochs_60_loss_CE",
+      "checkpoint_bb": "g_best_model_epoch_4.pth.tar",
+      "img_size": 512,
+      "layer": "features_denseblock4",
+      "pool1": "average"
+    },
+    "t": {
+      "checkpoint_t_path": "lr_0.01_epochs_60_loss_BCE_W_flattening_type_flatten_layer_features_denseblock4",
+      "checkpoint_file": "g_best_model_epoch_11.pth.tar"
+    },
+    "params": {
+      "labels": [
+        "0 (No Edema)",
+        "1 (Edema)"
+      ]
+    }
+  }
+}

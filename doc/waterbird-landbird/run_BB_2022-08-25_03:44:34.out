@@ -1,0 +1,100 @@
+data_root: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/spurious/waterbird_complete95_forest2water2
+json_root: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/codebase/data_preprocessing
+logs: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log/spurious-cub-waterbird-landbird-224
+checkpoints: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird-224
+output: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-waterbird-landbird-224
+attribute_file_name: attributes_spurious.npy
+name: VIT_CUBS
+dataset: cub
+model_type: ViT-B_16
+pretrained_dir: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz
+pretrained_model: None
+img_size: 224
+train_batch_size: 16
+eval_batch_size: 16
+eval_every: 200
+learning_rate: 0.03
+weight_decay: 0
+num_steps: 10000
+decay_type: cosine
+warmup_steps: 500
+max_grad_norm: 1.0
+local_rank: -1
+seed: 42
+gradient_accumulation_steps: 4
+smoothing_value: 0.0
+split: non-overlap
+slide_step: 12
+concept_names: ['has_bill_shape_dagger', 'has_bill_shape_hooked_seabird', 'has_bill_shape_allpurpose', 'has_bill_shape_cone', 'has_wing_color_brown', 'has_wing_color_grey', 'has_wing_color_yellow', 'has_wing_color_black', 'has_wing_color_white', 'has_wing_color_buff', 'has_upperparts_color_brown', 'has_upperparts_color_grey', 'has_upperparts_color_yellow', 'has_upperparts_color_black', 'has_upperparts_color_white', 'has_upperparts_color_buff', 'has_underparts_color_brown', 'has_underparts_color_grey', 'has_underparts_color_yellow', 'has_underparts_color_black', 'has_underparts_color_white', 'has_underparts_color_buff', 'has_breast_pattern_solid', 'has_breast_pattern_striped', 'has_breast_pattern_multicolored', 'has_back_color_brown', 'has_back_color_grey', 'has_back_color_yellow', 'has_back_color_black', 'has_back_color_white', 'has_back_color_buff', 'has_tail_shape_notched_tail', 'has_upper_tail_color_brown', 'has_upper_tail_color_grey', 'has_upper_tail_color_black', 'has_upper_tail_color_white', 'has_upper_tail_color_buff', 'has_head_pattern_plain', 'has_head_pattern_capped', 'has_breast_color_brown', 'has_breast_color_grey', 'has_breast_color_yellow', 'has_breast_color_black', 'has_breast_color_white', 'has_breast_color_buff', 'has_throat_color_grey', 'has_throat_color_yellow', 'has_throat_color_black', 'has_throat_color_white', 'has_eye_color_black', 'has_bill_length_about_the_same_as_head', 'has_bill_length_shorter_than_head', 'has_forehead_color_blue', 'has_forehead_color_brown', 'has_forehead_color_grey', 'has_forehead_color_yellow', 'has_forehead_color_black', 'has_forehead_color_white', 'has_forehead_color_red', 'has_under_tail_color_brown', 'has_under_tail_color_grey', 'has_under_tail_color_yellow', 'has_under_tail_color_black', 'has_under_tail_color_white', 'has_under_tail_color_buff', 'has_nape_color_blue', 'has_nape_color_brown', 'has_nape_color_grey', 'has_nape_color_yellow', 'has_nape_color_black', 'has_nape_color_white', 'has_nape_color_buff', 'has_belly_color_grey', 'has_belly_color_yellow', 'has_belly_color_black', 'has_belly_color_white', 'has_belly_color_buff', 'has_wing_shape_roundedwings', 'has_size_small_5__9_in', 'has_size_medium_9__16_in', 'has_size_very_small_3__5_in', 'has_shape_perchinglike', 'has_back_pattern_solid', 'has_back_pattern_striped', 'has_back_pattern_multicolored', 'has_tail_pattern_solid', 'has_tail_pattern_multicolored', 'has_belly_pattern_solid', 'has_primary_color_brown', 'has_primary_color_grey', 'has_primary_color_yellow', 'has_primary_color_black', 'has_primary_color_white', 'has_primary_color_buff', 'has_leg_color_grey', 'has_leg_color_black', 'has_leg_color_buff', 'has_bill_color_grey', 'has_bill_color_black', 'has_crown_color_blue', 'has_crown_color_brown', 'has_crown_color_grey', 'has_crown_color_yellow', 'has_crown_color_black', 'has_crown_color_white', 'has_wing_pattern_solid', 'has_wing_pattern_striped', 'has_wing_pattern_multicolored', 'has_ocean', 'has_lake', 'has_bamboo', 'has_forest']
+n_gpu: 1
+device: cuda
+nprocs: 1
+arch: ViT-B_16
+epochs: 95
+lr: 0.03
+labels: ['0 (Landbird)', '1 (Waterbird)']
+n_classes: 2
+load_pretrained: grid-size from 24 to 14
+train_batch_size: 4
+train_batch_size: 16
+4
+/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/spurious/waterbird_complete95_forest2water2
+(11788, 119)
+step: 200 || val_acc: 73.56130108423686
+saving model!!
+outputs saved at /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-waterbird-landbird-224
+step: 400 || val_acc: 73.56130108423686
+step: 600 || val_acc: 83.31943286071727
+saving model!!
+outputs saved at /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-waterbird-landbird-224
+step: 800 || val_acc: 75.47956630525438
+step: 1000 || val_acc: 84.07005838198499
+saving model!!
+outputs saved at /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-waterbird-landbird-224
+step: 1200 || val_acc: 80.31693077564637
+step: 1400 || val_acc: 88.4070058381985
+saving model!!
+outputs saved at /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-waterbird-landbird-224
+step: 1600 || val_acc: 85.73811509591326
+step: 1800 || val_acc: 83.15262718932443
+step: 2000 || val_acc: 83.65304420350293
+step: 2200 || val_acc: 83.65304420350293
+step: 2400 || val_acc: 85.65471226021685
+step: 2600 || val_acc: 83.90325271059216
+step: 2800 || val_acc: 85.23769808173478
+step: 3000 || val_acc: 80.23352793994995
+step: 3200 || val_acc: 83.90325271059216
+step: 3400 || val_acc: 83.4862385321101
+step: 3600 || val_acc: 84.23686405337781
+step: 3800 || val_acc: 81.7347789824854
+step: 4000 || val_acc: 82.65221017514595
+step: 4200 || val_acc: 84.40366972477065
+step: 4400 || val_acc: 84.57047539616347
+step: 4600 || val_acc: 83.40283569641367
+step: 4800 || val_acc: 84.65387823185988
+step: 5000 || val_acc: 85.4045037531276
+step: 5200 || val_acc: 85.15429524603837
+step: 5400 || val_acc: 84.98748957464554
+step: 5600 || val_acc: 84.98748957464554
+step: 5800 || val_acc: 84.65387823185988
+step: 6000 || val_acc: 84.23686405337781
+step: 6200 || val_acc: 84.57047539616347
+step: 6400 || val_acc: 84.1534612176814
+step: 6600 || val_acc: 83.06922435362803
+step: 6800 || val_acc: 82.9024186822352
+step: 7000 || val_acc: 83.15262718932443
+step: 7200 || val_acc: 82.73561301084237
+step: 7400 || val_acc: 82.06839032527105
+step: 7600 || val_acc: 82.06839032527105
+step: 7800 || val_acc: 83.65304420350293
+step: 8000 || val_acc: 84.40366972477065
+step: 8200 || val_acc: 83.65304420350293
+step: 8400 || val_acc: 83.90325271059216
+step: 8600 || val_acc: 84.7372810675563
+step: 8800 || val_acc: 83.90325271059216
+step: 9000 || val_acc: 83.40283569641367
+step: 9200 || val_acc: 83.81984987489575
+step: 9400 || val_acc: 84.1534612176814
+step: 9600 || val_acc: 83.23603002502085
+step: 9800 || val_acc: 82.98582151793161
+step: 10000 || val_acc: 83.4862385321101

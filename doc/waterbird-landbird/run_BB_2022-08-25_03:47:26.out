@@ -1,0 +1,379 @@
+Train BB for CUB
+Spurious whole dataset
+data_root: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/spurious/waterbird_complete95_forest2water2
+json_root: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/codebase/data_preprocessing
+logs: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log/spurious-cub-waterbird-landbird-224
+checkpoints: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird-224
+output: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-waterbird-landbird-224
+attribute_file_name: attributes_spurious.npy
+seed: 0
+pretrained: True
+dataset: cub
+img_size: 224
+bs: 16
+eval_every: 100
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0001
+epochs: 300
+arch: ResNet50
+name: VIT_CUBS
+pretrained_dir: /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz
+pretrained_model: None
+num_steps: 10000
+decay_type: cosine
+warmup_steps: 500
+max_grad_norm: 1.0
+local_rank: -1
+gradient_accumulation_steps: 4
+smoothing_value: 0.0
+split: non-overlap
+slide_step: 12
+concept_names: ['has_bill_shape_dagger', 'has_bill_shape_hooked_seabird', 'has_bill_shape_allpurpose', 'has_bill_shape_cone', 'has_wing_color_brown', 'has_wing_color_grey', 'has_wing_color_yellow', 'has_wing_color_black', 'has_wing_color_white', 'has_wing_color_buff', 'has_upperparts_color_brown', 'has_upperparts_color_grey', 'has_upperparts_color_yellow', 'has_upperparts_color_black', 'has_upperparts_color_white', 'has_upperparts_color_buff', 'has_underparts_color_brown', 'has_underparts_color_grey', 'has_underparts_color_yellow', 'has_underparts_color_black', 'has_underparts_color_white', 'has_underparts_color_buff', 'has_breast_pattern_solid', 'has_breast_pattern_striped', 'has_breast_pattern_multicolored', 'has_back_color_brown', 'has_back_color_grey', 'has_back_color_yellow', 'has_back_color_black', 'has_back_color_white', 'has_back_color_buff', 'has_tail_shape_notched_tail', 'has_upper_tail_color_brown', 'has_upper_tail_color_grey', 'has_upper_tail_color_black', 'has_upper_tail_color_white', 'has_upper_tail_color_buff', 'has_head_pattern_plain', 'has_head_pattern_capped', 'has_breast_color_brown', 'has_breast_color_grey', 'has_breast_color_yellow', 'has_breast_color_black', 'has_breast_color_white', 'has_breast_color_buff', 'has_throat_color_grey', 'has_throat_color_yellow', 'has_throat_color_black', 'has_throat_color_white', 'has_eye_color_black', 'has_bill_length_about_the_same_as_head', 'has_bill_length_shorter_than_head', 'has_forehead_color_blue', 'has_forehead_color_brown', 'has_forehead_color_grey', 'has_forehead_color_yellow', 'has_forehead_color_black', 'has_forehead_color_white', 'has_forehead_color_red', 'has_under_tail_color_brown', 'has_under_tail_color_grey', 'has_under_tail_color_yellow', 'has_under_tail_color_black', 'has_under_tail_color_white', 'has_under_tail_color_buff', 'has_nape_color_blue', 'has_nape_color_brown', 'has_nape_color_grey', 'has_nape_color_yellow', 'has_nape_color_black', 'has_nape_color_white', 'has_nape_color_buff', 'has_belly_color_grey', 'has_belly_color_yellow', 'has_belly_color_black', 'has_belly_color_white', 'has_belly_color_buff', 'has_wing_shape_roundedwings', 'has_size_small_5__9_in', 'has_size_medium_9__16_in', 'has_size_very_small_3__5_in', 'has_shape_perchinglike', 'has_back_pattern_solid', 'has_back_pattern_striped', 'has_back_pattern_multicolored', 'has_tail_pattern_solid', 'has_tail_pattern_multicolored', 'has_belly_pattern_solid', 'has_primary_color_brown', 'has_primary_color_grey', 'has_primary_color_yellow', 'has_primary_color_black', 'has_primary_color_white', 'has_primary_color_buff', 'has_leg_color_grey', 'has_leg_color_black', 'has_leg_color_buff', 'has_bill_color_grey', 'has_bill_color_black', 'has_crown_color_blue', 'has_crown_color_brown', 'has_crown_color_grey', 'has_crown_color_yellow', 'has_crown_color_black', 'has_crown_color_white', 'has_wing_pattern_solid', 'has_wing_pattern_striped', 'has_wing_pattern_multicolored', 'has_ocean', 'has_lake', 'has_bamboo', 'has_forest']
+labels: ['0 (Landbird)', '1 (Waterbird)']
+spurious_specific_classes: n
+spurious_waterbird_landbird: y
+###############################################
+Device: cuda
+Loading dataloader for waterbird-landbird
+/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/spurious/waterbird_complete95_forest2water2
+(11788, 119)
+################## TB Log path ###################
+/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log/spurious-cub-waterbird-landbird-224/cub/BB/lr_0.001_epochs_300_ResNet50/Run(arch='ResNet50', dataset='cub', now='2022-08-25-03H-48M-26S')
+################## TB Log path ###################
+
+ Old best val accuracy: 0 (%) || New best val accuracy: 85.48790658882403 (%) , and new model saved..
+
+
+ /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird-224/cub/BB/lr_0.001_epochs_300/ResNet50/g_best_model_epoch_1.pth.tar
+
+Epoch: [1/300] Train_loss: 0.1492 Train_Accuracy: 93.6392 (%) Val_loss: 0.3589 Best_Val_Accuracy: 85.4879 (%)  Epoch_Duration: 16.9032
+
+ Old best val accuracy: 85.48790658882403 (%) || New best val accuracy: 86.07172643869892 (%) , and new model saved..
+
+
+ /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird-224/cub/BB/lr_0.001_epochs_300/ResNet50/g_best_model_epoch_2.pth.tar
+
+Epoch: [2/300] Train_loss: 0.0424 Train_Accuracy: 98.269 (%) Val_loss: 0.4492 Best_Val_Accuracy: 86.0717 (%)  Epoch_Duration: 16.0139
+
+ Old best val accuracy: 86.07172643869892 (%) || New best val accuracy: 88.49040867389492 (%) , and new model saved..
+
+
+ /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird-224/cub/BB/lr_0.001_epochs_300/ResNet50/g_best_model_epoch_3.pth.tar
+
+Epoch: [3/300] Train_loss: 0.0141 Train_Accuracy: 99.3535 (%) Val_loss: 0.3829 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 16.3368
+Epoch: [4/300] Train_loss: 0.0059 Train_Accuracy: 99.6455 (%) Val_loss: 0.4965 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 15.9011
+Epoch: [5/300] Train_loss: 0.007 Train_Accuracy: 99.6246 (%) Val_loss: 0.4266 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 15.9486
+Epoch: [6/300] Train_loss: 0.0064 Train_Accuracy: 99.6246 (%) Val_loss: 0.5281 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 16.0465
+Epoch: [7/300] Train_loss: 0.0026 Train_Accuracy: 99.7497 (%) Val_loss: 0.543 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 16.452
+Epoch: [8/300] Train_loss: 0.0029 Train_Accuracy: 99.708 (%) Val_loss: 0.567 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 15.9642
+Epoch: [9/300] Train_loss: 0.0025 Train_Accuracy: 99.6872 (%) Val_loss: 0.5031 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 16.0182
+Epoch: [10/300] Train_loss: 0.0025 Train_Accuracy: 99.7289 (%) Val_loss: 0.5385 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 16.1448
+Epoch: [11/300] Train_loss: 0.0014 Train_Accuracy: 99.7706 (%) Val_loss: 0.5397 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 16.2342
+Epoch: [12/300] Train_loss: 0.0013 Train_Accuracy: 99.7706 (%) Val_loss: 0.4884 Best_Val_Accuracy: 88.4904 (%)  Epoch_Duration: 15.9672
+
+ Old best val accuracy: 88.49040867389492 (%) || New best val accuracy: 88.57381150959132 (%) , and new model saved..
+
+
+ /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird-224/cub/BB/lr_0.001_epochs_300/ResNet50/g_best_model_epoch_13.pth.tar
+
+Epoch: [13/300] Train_loss: 0.0008 Train_Accuracy: 99.7706 (%) Val_loss: 0.4734 Best_Val_Accuracy: 88.5738 (%)  Epoch_Duration: 16.0848
+Epoch: [14/300] Train_loss: 0.0013 Train_Accuracy: 99.7497 (%) Val_loss: 0.5197 Best_Val_Accuracy: 88.5738 (%)  Epoch_Duration: 16.258
+Epoch: [15/300] Train_loss: 0.0009 Train_Accuracy: 99.7497 (%) Val_loss: 0.5078 Best_Val_Accuracy: 88.5738 (%)  Epoch_Duration: 16.6693
+Epoch: [16/300] Train_loss: 0.0014 Train_Accuracy: 99.7289 (%) Val_loss: 0.4866 Best_Val_Accuracy: 88.5738 (%)  Epoch_Duration: 16.4122
+
+ Old best val accuracy: 88.57381150959132 (%) || New best val accuracy: 88.74061718098415 (%) , and new model saved..
+
+
+ /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird-224/cub/BB/lr_0.001_epochs_300/ResNet50/g_best_model_epoch_17.pth.tar
+
+Epoch: [17/300] Train_loss: 0.0005 Train_Accuracy: 99.7706 (%) Val_loss: 0.4924 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.1609
+Epoch: [18/300] Train_loss: 0.0007 Train_Accuracy: 99.7706 (%) Val_loss: 0.4903 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.2931
+Epoch: [19/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.524 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0162
+Epoch: [20/300] Train_loss: 0.0006 Train_Accuracy: 99.7497 (%) Val_loss: 0.5226 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.1294
+Epoch: [21/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.5273 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0921
+Epoch: [22/300] Train_loss: 0.0005 Train_Accuracy: 99.7706 (%) Val_loss: 0.5602 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.5432
+Epoch: [23/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5695 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.3526
+Epoch: [24/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.5604 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0232
+Epoch: [25/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5631 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0762
+Epoch: [26/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5524 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.1189
+Epoch: [27/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5537 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0198
+Epoch: [28/300] Train_loss: 0.0017 Train_Accuracy: 99.6872 (%) Val_loss: 0.6302 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0846
+Epoch: [29/300] Train_loss: 0.0005 Train_Accuracy: 99.7497 (%) Val_loss: 0.5524 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.1104
+Epoch: [30/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.6039 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.4281
+Epoch: [31/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5514 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.3066
+Epoch: [32/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5896 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0534
+Epoch: [33/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.572 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0411
+Epoch: [34/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.5945 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.166
+Epoch: [35/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5779 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.1133
+Epoch: [36/300] Train_loss: 0.0007 Train_Accuracy: 99.7497 (%) Val_loss: 0.5809 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0656
+Epoch: [37/300] Train_loss: 0.0007 Train_Accuracy: 99.7706 (%) Val_loss: 0.5371 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.2062
+Epoch: [38/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.6042 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.5505
+Epoch: [39/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5864 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.182
+Epoch: [40/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.538 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.2788
+Epoch: [41/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.5708 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.0653
+Epoch: [42/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5803 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.4282
+Epoch: [43/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.6033 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.2534
+Epoch: [44/300] Train_loss: 0.0007 Train_Accuracy: 99.7497 (%) Val_loss: 0.6295 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.1597
+Epoch: [45/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5638 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.2094
+Epoch: [46/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5587 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.3614
+Epoch: [47/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5416 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.3839
+Epoch: [48/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5642 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.4139
+Epoch: [49/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5729 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.7024
+Epoch: [50/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5526 Best_Val_Accuracy: 88.7406 (%)  Epoch_Duration: 16.2927
+
+ Old best val accuracy: 88.74061718098415 (%) || New best val accuracy: 88.9908256880734 (%) , and new model saved..
+
+
+ /ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird-224/cub/BB/lr_0.001_epochs_300/ResNet50/g_best_model_epoch_51.pth.tar
+
+Epoch: [51/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5002 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1454
+Epoch: [52/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5247 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4831
+Epoch: [53/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5626 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.232
+Epoch: [54/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5367 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1619
+Epoch: [55/300] Train_loss: 0.0004 Train_Accuracy: 99.7497 (%) Val_loss: 0.5503 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2171
+Epoch: [56/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.4987 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2659
+Epoch: [57/300] Train_loss: 0.0005 Train_Accuracy: 99.7706 (%) Val_loss: 0.5919 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4721
+Epoch: [58/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5537 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1832
+Epoch: [59/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5616 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.17
+Epoch: [60/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5709 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1667
+Epoch: [61/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5774 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2305
+Epoch: [62/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5751 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0039
+Epoch: [63/300] Train_loss: 0.0005 Train_Accuracy: 99.7706 (%) Val_loss: 0.5608 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1132
+Epoch: [64/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5827 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0883
+Epoch: [65/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5824 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.7065
+Epoch: [66/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5391 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.136
+Epoch: [67/300] Train_loss: 0.0004 Train_Accuracy: 99.7497 (%) Val_loss: 0.5535 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1222
+Epoch: [68/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6058 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4478
+Epoch: [69/300] Train_loss: 0.0009 Train_Accuracy: 99.7497 (%) Val_loss: 0.5659 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3612
+Epoch: [70/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6145 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2387
+Epoch: [71/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5649 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2055
+Epoch: [72/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5661 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3729
+Epoch: [73/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5544 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 17.5494
+Epoch: [74/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5782 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.5495
+Epoch: [75/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5671 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0755
+Epoch: [76/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5622 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0037
+Epoch: [77/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5956 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0619
+Epoch: [78/300] Train_loss: 0.001 Train_Accuracy: 99.7497 (%) Val_loss: 0.535 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3891
+Epoch: [79/300] Train_loss: 0.0004 Train_Accuracy: 99.7497 (%) Val_loss: 0.5525 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1353
+Epoch: [80/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5732 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.803
+Epoch: [81/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5537 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3276
+Epoch: [82/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.531 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2075
+Epoch: [83/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5589 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1309
+Epoch: [84/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5501 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.5338
+Epoch: [85/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5901 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1095
+Epoch: [86/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5436 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4734
+Epoch: [87/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5247 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3928
+Epoch: [88/300] Train_loss: 0.0006 Train_Accuracy: 99.7497 (%) Val_loss: 0.5901 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0689
+Epoch: [89/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5843 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1273
+Epoch: [90/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5658 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2746
+Epoch: [91/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5365 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2295
+Epoch: [92/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5968 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0823
+Epoch: [93/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5136 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0543
+Epoch: [94/300] Train_loss: 0.0019 Train_Accuracy: 99.708 (%) Val_loss: 0.5549 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4716
+Epoch: [95/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5435 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0475
+Epoch: [96/300] Train_loss: 0.0005 Train_Accuracy: 99.7497 (%) Val_loss: 0.5826 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0237
+Epoch: [97/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5172 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3605
+Epoch: [98/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5068 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0914
+Epoch: [99/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.564 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4374
+Epoch: [100/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5237 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0885
+Epoch: [101/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6045 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1194
+Epoch: [102/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5762 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1861
+Epoch: [103/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5732 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.7027
+Epoch: [104/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5464 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0502
+Epoch: [105/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5325 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1516
+Epoch: [106/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5896 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1002
+Epoch: [107/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.555 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0128
+Epoch: [108/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5621 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.348
+Epoch: [109/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5816 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4244
+Epoch: [110/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5445 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3733
+Epoch: [111/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5514 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 15.9839
+Epoch: [112/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5809 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0575
+Epoch: [113/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5482 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1117
+Epoch: [114/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5613 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1718
+Epoch: [115/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5457 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0939
+Epoch: [116/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5486 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0593
+Epoch: [117/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.6103 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3763
+Epoch: [118/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5772 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1278
+Epoch: [119/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5389 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4317
+Epoch: [120/300] Train_loss: 0.001 Train_Accuracy: 99.7289 (%) Val_loss: 0.5392 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 15.9831
+Epoch: [121/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5497 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1395
+Epoch: [122/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5665 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1427
+Epoch: [123/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5678 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4091
+Epoch: [124/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.586 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3282
+Epoch: [125/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5691 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 15.9176
+Epoch: [126/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5416 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0214
+Epoch: [127/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5715 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 15.9925
+Epoch: [128/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5353 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0558
+Epoch: [129/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5387 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.5673
+Epoch: [130/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5694 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0492
+Epoch: [131/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5783 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3275
+Epoch: [132/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5659 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0624
+Epoch: [133/300] Train_loss: 0.0006 Train_Accuracy: 99.7497 (%) Val_loss: 0.5264 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 18.1205
+Epoch: [134/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5177 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0605
+Epoch: [135/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5598 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0368
+Epoch: [136/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5521 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1584
+Epoch: [137/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5775 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0474
+Epoch: [138/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5788 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0076
+Epoch: [139/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5591 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.069
+Epoch: [140/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5655 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0484
+Epoch: [141/300] Train_loss: 0.0006 Train_Accuracy: 99.7706 (%) Val_loss: 0.5719 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3266
+Epoch: [142/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5973 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0494
+Epoch: [143/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5884 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0924
+Epoch: [144/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5681 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3879
+Epoch: [145/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5625 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.304
+Epoch: [146/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5509 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3141
+Epoch: [147/300] Train_loss: 0.0011 Train_Accuracy: 99.7497 (%) Val_loss: 0.5333 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1001
+Epoch: [148/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5375 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2869
+Epoch: [149/300] Train_loss: 0.0011 Train_Accuracy: 99.7289 (%) Val_loss: 0.5425 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0843
+Epoch: [150/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5529 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3782
+Epoch: [151/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5395 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0505
+Epoch: [152/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5527 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2944
+Epoch: [153/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.567 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0441
+Epoch: [154/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5929 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4626
+Epoch: [155/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5537 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.5184
+Epoch: [156/300] Train_loss: 0.0005 Train_Accuracy: 99.7706 (%) Val_loss: 0.5831 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 25.4571
+Epoch: [157/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.575 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3757
+Epoch: [158/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.5557 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1905
+Epoch: [159/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5789 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.598
+Epoch: [160/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.5512 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1674
+Epoch: [161/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5803 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.158
+Epoch: [162/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5705 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.5241
+Epoch: [163/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.582 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1897
+Epoch: [164/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5222 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4551
+Epoch: [165/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5962 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0727
+Epoch: [166/300] Train_loss: 0.0003 Train_Accuracy: 99.7497 (%) Val_loss: 0.5965 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.066
+Epoch: [167/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5693 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0739
+Epoch: [168/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5329 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.5175
+Epoch: [169/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5659 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0962
+Epoch: [170/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.56 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3468
+Epoch: [171/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5573 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3437
+Epoch: [172/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5788 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2949
+Epoch: [173/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5656 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0834
+Epoch: [174/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5645 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3277
+Epoch: [175/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5794 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2167
+Epoch: [176/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5778 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1206
+Epoch: [177/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5371 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3861
+Epoch: [178/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5576 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2873
+Epoch: [179/300] Train_loss: 0.0004 Train_Accuracy: 99.7497 (%) Val_loss: 0.5466 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0388
+Epoch: [180/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5679 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2778
+Epoch: [181/300] Train_loss: 0.0005 Train_Accuracy: 99.7706 (%) Val_loss: 0.5723 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0917
+Epoch: [182/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.552 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3518
+Epoch: [183/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5504 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0754
+Epoch: [184/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5309 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0679
+Epoch: [185/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5852 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0472
+Epoch: [186/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5641 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3166
+Epoch: [187/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6073 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4357
+Epoch: [188/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.591 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3175
+Epoch: [189/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.538 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1037
+Epoch: [190/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5724 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4551
+Epoch: [191/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5787 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0245
+Epoch: [192/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5486 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3574
+Epoch: [193/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5621 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2606
+Epoch: [194/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5767 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1139
+Epoch: [195/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.59 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0627
+Epoch: [196/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5421 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.7218
+Epoch: [197/300] Train_loss: 0.0005 Train_Accuracy: 99.7706 (%) Val_loss: 0.5433 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3502
+Epoch: [198/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.536 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2616
+Epoch: [199/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5249 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2878
+Epoch: [200/300] Train_loss: 0.0004 Train_Accuracy: 99.7497 (%) Val_loss: 0.5442 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.247
+Epoch: [201/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5855 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.267
+Epoch: [202/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5756 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1728
+Epoch: [203/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5401 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.5523
+Epoch: [204/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5699 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0659
+Epoch: [205/300] Train_loss: 0.001 Train_Accuracy: 99.7497 (%) Val_loss: 0.5683 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0648
+Epoch: [206/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5677 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1219
+Epoch: [207/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5451 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3397
+Epoch: [208/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.6028 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.323
+Epoch: [209/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5438 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1264
+Epoch: [210/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5416 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 15.9573
+Epoch: [211/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5991 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3184
+Epoch: [212/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5723 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0877
+Epoch: [213/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5914 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1374
+Epoch: [214/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5642 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1852
+Epoch: [215/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5534 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1506
+Epoch: [216/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5366 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4722
+Epoch: [217/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5711 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.289
+Epoch: [218/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5634 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2113
+Epoch: [219/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5336 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0675
+Epoch: [220/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5757 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1287
+Epoch: [221/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5882 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.383
+Epoch: [222/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5954 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1571
+Epoch: [223/300] Train_loss: 0.0005 Train_Accuracy: 99.7497 (%) Val_loss: 0.5859 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0706
+Epoch: [224/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5534 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1506
+Epoch: [225/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5784 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2211
+Epoch: [226/300] Train_loss: 0.0005 Train_Accuracy: 99.7497 (%) Val_loss: 0.5651 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0873
+Epoch: [227/300] Train_loss: 0.0006 Train_Accuracy: 99.7497 (%) Val_loss: 0.5715 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2608
+Epoch: [228/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5451 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1054
+Epoch: [229/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5655 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1738
+Epoch: [230/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5487 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0321
+Epoch: [231/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5789 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2478
+Epoch: [232/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.559 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1326
+Epoch: [233/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5712 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1602
+Epoch: [234/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5578 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1187
+Epoch: [235/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5722 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4927
+Epoch: [236/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5802 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.107
+Epoch: [237/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5174 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1736
+Epoch: [238/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5723 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3531
+Epoch: [239/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6171 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1184
+Epoch: [240/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5452 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2877
+Epoch: [241/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5795 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0561
+Epoch: [242/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6091 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.062
+Epoch: [243/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5501 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0357
+Epoch: [244/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5624 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3884
+Epoch: [245/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5608 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1355
+Epoch: [246/300] Train_loss: 0.0007 Train_Accuracy: 99.7289 (%) Val_loss: 0.5113 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0559
+Epoch: [247/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5317 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1327
+Epoch: [248/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5604 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4253
+Epoch: [249/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5494 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3353
+Epoch: [250/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5422 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1469
+Epoch: [251/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5653 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.072
+Epoch: [252/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5669 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.7446
+Epoch: [253/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5603 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1054
+Epoch: [254/300] Train_loss: 0.0009 Train_Accuracy: 99.7289 (%) Val_loss: 0.5688 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1368
+Epoch: [255/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5756 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3325
+Epoch: [256/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5779 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4323
+Epoch: [257/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5946 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3166
+Epoch: [258/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.615 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1849
+Epoch: [259/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.6068 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2983
+Epoch: [260/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6139 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4036
+Epoch: [261/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.575 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1979
+Epoch: [262/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5833 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.5596
+Epoch: [263/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5649 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.9086
+Epoch: [264/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5806 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1945
+Epoch: [265/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5788 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3653
+Epoch: [266/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5254 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.489
+Epoch: [267/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6103 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2715
+Epoch: [268/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5623 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2365
+Epoch: [269/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5717 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4224
+Epoch: [270/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5834 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2723
+Epoch: [271/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5488 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2717
+Epoch: [272/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.5285 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0398
+Epoch: [273/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5487 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1244
+Epoch: [274/300] Train_loss: 0.0007 Train_Accuracy: 99.7497 (%) Val_loss: 0.5894 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4872
+Epoch: [275/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5415 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.0758
+Epoch: [276/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5823 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1403
+Epoch: [277/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5719 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3725
+Epoch: [278/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5631 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1622
+Epoch: [279/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5413 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1511
+Epoch: [280/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5475 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4063
+Epoch: [281/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5822 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.149
+Epoch: [282/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5754 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1476
+Epoch: [283/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5678 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1319
+Epoch: [284/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.562 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4667
+Epoch: [285/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5495 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1757
+Epoch: [286/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5887 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1143
+Epoch: [287/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5668 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3783
+Epoch: [288/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5431 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2151
+Epoch: [289/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5334 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.1822
+Epoch: [290/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5755 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4984
+Epoch: [291/300] Train_loss: 0.0004 Train_Accuracy: 99.7706 (%) Val_loss: 0.5291 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.065
+Epoch: [292/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5679 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2775
+Epoch: [293/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5642 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4682
+Epoch: [294/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.6737 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3
+Epoch: [295/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5529 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2716
+Epoch: [296/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.6027 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4841
+Epoch: [297/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5855 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.4183
+Epoch: [298/300] Train_loss: 0.0002 Train_Accuracy: 99.7706 (%) Val_loss: 0.5818 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.3453
+Epoch: [299/300] Train_loss: 0.0001 Train_Accuracy: 99.7706 (%) Val_loss: 0.5317 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.2197
+Epoch: [300/300] Train_loss: 0.0003 Train_Accuracy: 99.7706 (%) Val_loss: 0.5627 Best_Val_Accuracy: 88.9908 (%)  Epoch_Duration: 16.155
