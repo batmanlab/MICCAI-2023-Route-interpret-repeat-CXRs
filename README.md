@@ -151,7 +151,7 @@ the [link](https://drive.google.com/drive/u/1/folders/1Kzt3WQPqbei2407wpqOUYOCYu
 subset of 5000, 11000, 15000, 20000 and 30000 training samples of Stanford-CXR and place it in the directory
 `Path/out/stanford_cxr/BB/lr_0.01_epochs_5_loss_CE/densenet121/<disease>`. For example, to get the details of 15000
 training samples of cardiomegaly of Stanford-CXR, place the `master_tot_15000.csv` file in the directory
-`Path/out/stanford_cxr/BB/lr_0.01_epochs_5_loss_CE/densenet121/cardiomegaly`. Now the `lr` and the `epoch` in the path
+`Path/out/stanford_cxr/BB/lr_0.01_epochs_5_loss_CE/densenet121/cardiomegaly`. The `lr` and the `epoch` in the path
 is the learning rate and epoch at which the BB for Stanford-CXR has been trained. You can get it from the 1st command of
 each script in the folder [`./src/scripts/scripts_stanford_cxr`](./src/scripts/scripts_stanford_cxr).
 
