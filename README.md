@@ -263,7 +263,14 @@ Also make sure the following variables are correct:
 ## How to Cite
 
 ```
-To updated soon
+@misc{ghosh2023distilling,
+      title={Distilling BlackBox to Interpretable models for Efficient Transfer Learning}, 
+      author={Shantanu Ghosh and Ke Yu and Kayhan Batmanghelich},
+      year={2023},
+      eprint={2305.17303},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 ## License and copyright
