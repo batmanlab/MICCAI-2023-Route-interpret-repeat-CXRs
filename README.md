@@ -1,6 +1,6 @@
 # Distilling BlackBox to Interpretable models for Efficient Transfer Learning #
 
-### [Project Page]() | [Paper (Coming soon)]() | [arXiv](https://arxiv.org/abs/2305.17303) | [Video (Coming soon)]()
+### [Project Page](https://shantanu48114860.github.io/projects/MICCAI-2023-MoIE-CXR) | [Paper (Coming soon)]() | [arXiv](https://arxiv.org/abs/2305.17303) | [Video (Coming soon)]()
 
 Official PyTorch implementation of the paper <br/>
 **[Distilling BlackBox to Interpretable models for Efficient Transfer Learning]()** <br/>

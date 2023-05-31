@@ -104,7 +104,7 @@ def plot_flops(
     )
 
     plt.yscale("log")
-    ax.set_ylabel("log(Flops (T))", fontsize=font_label, labelpad=label_pad)
+    ax.set_ylabel("log(Flops) (T)", fontsize=font_label, labelpad=label_pad)
     ax.set_xlabel("% of training samples", fontsize=font_label, labelpad=label_pad)
 
     handles, _ = ax.get_legend_handles_labels()
