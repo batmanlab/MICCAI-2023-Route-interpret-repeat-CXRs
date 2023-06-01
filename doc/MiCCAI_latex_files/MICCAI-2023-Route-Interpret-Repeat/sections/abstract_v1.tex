@@ -1,0 +1,27 @@
+\begin{abstract}
+    Building generalizable AI models is one of the primary challenges in the healthcare domain.
+While radiologists rely on generalizable descriptive rules of abnormality, Neural Network (NN) models suffer even with a slight shift in input distribution (\eg scanner type).
+Fine-tuning a model to transfer knowledge from one domain to another requires a significant amount of labeled data in the target domain. 
+In this paper, we develop an interpretable model that can be efficiently fine-tuned to an unseen target domain with minimal computational cost.
+We assume the interpretable component of NN to be approximately domain-invariant.
+However, interpretable models typically underperform compared to their Blackbox (BB) variants. We start with a BB in the source domain and distill it into a \emph{mixture} of shallow interpretable models using human-understandable concepts. 
+As each interpretable model covers a subset of data, a mixture of interpretable models achieves comparable performance as BB.
+Further, we use the pseudo-labeling technique from semi-supervised learning (SSL) to learn the concept classifier in the target domain, followed by fine-tuning the interpretable models in the target domain.
+We evaluate our model using a real-life large-scale chest-X-ray (CXR) classification dataset.
+The code is available at: \url{https://github.com/batmanlab/MICCAI-2023-Route-interpret-repeat-CXRs}.
+    \keywords{
+        Explainable-AI \and
+        Interpretable models \and
+        Transfer learning
+    }
+\end{abstract}
+
+% Developing a generalizable model is one of the main challenges of AI in the healthcare domain
+% While radiologists rely on descriptive explanations of abnormality which are fairly generalizable, DL models struggle even by the smaller shift in the distribution of input (eg scanner type)
+% Developing a data-efficient transfer learning can alleviate this problem
+% Currently, transfer learning from one to another domain requires a substantial amount of label data in the target domain
+% In this paper, we develop an interpretable model that can be efficiently transferred between two domains
+% The idea is that the interpretable part of a model is approximately invariant between domains
+% However,  interpretable models usually underperform the blackbox models. We address this issue by starting from a blackbox model and gradually distill the blackbox to a mixture of interpretable models. Our approach yields a mixture of interptrable models applied on the concept level that does not compromise in performance.
+% During the transfer, we apply pseduo label semi-supervised learning technique to adjust and concept classifier, then fine-tune a shallow interpretable model.
+% We evaluate our model on classification problems on several chest X-ray classification datasets.

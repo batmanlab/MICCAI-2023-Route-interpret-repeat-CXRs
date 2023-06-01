@@ -1,0 +1,105 @@
+\begin{table*}[h]
+\caption{MoIE-CXR does not compromize the performance of BB. We 
+provide the mean and standard errors of AUROC over five random seeds. For MoIE-CXR, we also report the percentage of test set samples covered by all experts as ``\emph{Coverage}''. We boldfaced our results and BB.}
+\begin{adjustbox}{max width=1\textwidth, center}
+\begin{tabular}{lccccccccc}
+\toprule
+\textbf{Model} &
+  Effusion &
+  Cardiomegaly &
+  Edema &
+  Pneumonia &
+  Pneumothorax
+  \\
+\midrule 
+  \scriptsize{Blackbox (BB)} & 
+  \scriptsize{$\boldsymbol{0.92}$} & 
+  \scriptsize{$\boldsymbol{0.84}$} & 
+  \scriptsize{$\boldsymbol{0.89}$} & 
+  \scriptsize{$\boldsymbol{0.79}$} 
+  & \scriptsize{$\boldsymbol{0.91}$}
+  \\
+\midrule
+\scriptsize{\textbf{INTERPRETABLE BY DESIGN}} \\
+\scriptsize{CEM}~\cite{zarlenga2022concept} &
+\scriptsize{$0.83_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.75_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.77_{\pm 2\mathrm{e}{-4}}$} &
+\scriptsize{$0.62_{\pm 4\mathrm{e}{-4}}$} &
+\scriptsize{$0.76_{\pm 3\mathrm{e}{-4}}$} &
+\\
+\scriptsize{CBM (Sequential)}~\cite{koh2020concept}  &  
+\scriptsize{$0.78_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.72_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.77_{\pm 5\mathrm{e}{-4}}$} &
+\scriptsize{$0.60_{\pm 1\mathrm{e}{-3}}$} &
+\scriptsize{$0.75_{\pm 6\mathrm{e}{-4}}$} &
+\\
+\scriptsize{CBM + ELL}~\cite{koh2020concept, barbiero2022entropy}    &
+\scriptsize{$0.81_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.72_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.79_{\pm 5\mathrm{e}{-4}}$} &
+\scriptsize{$0.62_{\pm 8\mathrm{e}{-4}}$} &
+\scriptsize{$0.75_{\pm 6\mathrm{e}{-4}}$} &
+\\
+
+\midrule
+\scriptsize{\textbf{POSTHOC}} \\
+\scriptsize{PCBM}~\cite{yuksekgonul2022post} & 
+\scriptsize{$0.88_{\pm 1\mathrm{e}{-4}}$} & 
+\scriptsize{$0.81_{\pm 1\mathrm{e}{-4}}$} & 
+\scriptsize{$0.82_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.72_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.85_{\pm 7\mathrm{e}{-4}}$} &
+ \\ 
+\scriptsize{PCBM-h}~\cite{yuksekgonul2022post} &
+\scriptsize{$0.90_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.83_{\pm 1\mathrm{e}{-4}}$} & 
+\scriptsize{$0.85_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.77_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.89_{\pm 7\mathrm{e}{-4}}$} &
+\\ 
+\scriptsize{PCBM + ELL}~\cite{yuksekgonul2022post, barbiero2022entropy} &
+\scriptsize{$0.90_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.82_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.85_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.75_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.85_{\pm 6\mathrm{e}{-4}}$} &
+\\
+\scriptsize{PCBM-h + ELL}~\cite{yuksekgonul2022post, barbiero2022entropy} &
+\scriptsize{$0.91_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.83_{\pm 1\mathrm{e}{-4}}$} & 
+\scriptsize{$0.87_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.77_{\pm 1\mathrm{e}{-4}}$} &
+\scriptsize{$0.90_{\pm 1\mathrm{e}{-4}}$} &
+\\
+ 
+\midrule
+\scriptsize{\textbf{OURS}} \\
+\scriptsize{MoIE-CXR $^{\text{(Coverage)}}$} & 
+\scriptsize{$\boldsymbol{0.93^\textbf{\emph{(0.90)}}_{\pm 1\mathrm{e}{-4}}}$} &
+\scriptsize{$\boldsymbol{0.85^\textbf{\emph{(0.96)}}_{\pm 1\mathrm{e}{-4}}}$} &
+\scriptsize{$\boldsymbol{0.91^\textbf{\emph{(0.92)}}_{\pm 1\mathrm{e}{-4}}}$} &
+\scriptsize{$\boldsymbol{0.80^\textbf{\emph{(0.97)}}_{\pm 1\mathrm{e}{-4}}}$} &
+\scriptsize{$\boldsymbol{0.91^\textbf{\emph{(0.93)}}_{\pm 2\mathrm{e}{-4}}}$} &
+\\ 
+
+\scriptsize{MoIE-CXR+R} & 
+\scriptsize{$\boldsymbol{0.91_{\pm 1\mathrm{e}{-4}}}$} &
+\scriptsize{$\boldsymbol{0.82_{\pm 1\mathrm{e}{-4}}}$} &
+\scriptsize{$\boldsymbol{0.88_{\pm 1\mathrm{e}{-4}}}$} &
+\scriptsize{$\boldsymbol{0.78_{\pm 1\mathrm{e}{-4}}}$} &
+\scriptsize{$\boldsymbol{0.90_{\pm 2\mathrm{e}{-4}}}$}
+\\ 
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\label{tab:performance}
+\end{table*}
+
+\noindent \textbf{MoIE-CXR does not compromise BB's performance.}
+\noindent \textbf{Analysing MoIE-CXR:} Tab.~\ref{tab:performance} shows that MoIE-CXR outperforms other models, including BB. Recall that MoIE-CXR refers to the mixture of all interpretable experts, excluding any residuals. As MoIE-CXR specializes in various subsets of data, it effectively discovers sample-specific classifying concepts and achieves superior performance.
+In general, MoIE-CXR exceeds the interpretable-by-design baselines (CEM, CBM, and CBM + ELL) by a fair margin (on average, at least $\sim 10\% \uparrow$), especially for pneumonia and pneumothorax where the number of samples with the disease is significantly less ($\sim 750/24000$ in the testset).
+\noindent\textbf{Analysing MoIE-CXR+R:}
+ To compare the performance on the entire dataset, we additionally report MoIE-CXR+R, the mixture of interpretable experts with the final residual in Tab.\ref{tab:performance}. MoIE-CXR+R outperforms the interpretable-by-design models and yields comparable performance as BB. The residualized PCBM baseline, \ie PCBM-h, performs similarly to MoIE-CXR+R.
+ PCBM-h rectifies the interpretable PCBM's mistakes by learning the residual with the complete dataset to resemble BB's performance. However, the experts and the final residual approximate the interpretable and uninterpretable fractions of BB, respectively. In each iteration, the residual focuses on the samples not covered by the respective expert to create BB for the next iteration and likewise. As a result, the final residual in MoIE-CXR+R covers the "hardest" examples, reducing its overall performance relative to MoIE-CXR. 

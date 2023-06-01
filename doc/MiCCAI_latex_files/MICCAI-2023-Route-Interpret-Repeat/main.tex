@@ -1,0 +1,142 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+%
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+\usepackage[misc,geometry]{ifsym}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+% \usepackage{algpseudocode}
+\usepackage{makecell}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{blkarray, bigstrut}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue}
+\usepackage{amsfonts}
+\usepackage{siunitx}
+\usepackage{dsfont}
+\usepackage{lipsum}
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{bm}
+\usepackage{pifont}
+\usepackage{relsize}
+
+\newcommand\eg {{\it e.g., }}
+\newcommand\st {{\it s.t., }}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand*\rot{\rotatebox{90}}
+\newcommand*\OK{\ding{51}}
+\newcommand\ie {{\it i.e., }}
+\newcommand*\mystrut[1]{\vrule width0pt height0pt depth#1\relax}
+\begin{document}
+%
+\title{
+Distilling BlackBox to Interpretable models for Efficient Transfer Learning
+% Interpretable Model Distillation for Efficient Transfer Learning
+% Efficient Transfer Learning via Distillation of Interpretable Neural Networks
+}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{Shantanu Ghosh\inst{1}{$^{(\textrm{\Letter})}$}\and
+Ke Yu\inst{2}\and
+Kayhan Batmanghelich\inst{1}}
+
+\authorrunning{S. Ghosh et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{
+Department of Electrical and Computer Engineering, Boston University, Boston, MA, USA \\
+\email{shawn24@bu.edu}\\
+\and
+Intelligent Systems Program, University of Pittsburgh, Pittsburgh, PA, USA 
+}
+
+
+%
+\maketitle              % typeset the header of the contribution
+%
+\input{sections/abstract_v1}
+%
+%
+\section{Introduction}
+\input{sections/introduction_v5}
+\label{sec:intro}
+
+% \section{Background: Route, Interpret, and Repeat}
+% \input{sections/background_v1}
+% \label{sec:background}
+
+\section{Methodology}
+%\input{sections/method_v1}
+\input{sections/method_v1}
+\label{sec:method}
+
+\section{Experiments}
+\input{sections/experiment_v1}
+\label{sec:experiment}
+
+\noindent \textbf{MoIE-CXR captures diverse explanations.}
+\input{sections/qual_v1.tex}
+\label{sec:qual_analysis}
+
+\input{sections/quant_v1.tex}
+\label{sec:quant_analysis}
+
+
+\input{sections/residual_performance.tex}
+\label{sec:residual_performance}
+
+\input{sections/domain_generalization.tex}
+\label{sec:domain_genralization}
+
+\section{Conclusion}
+\input{sections/conclusion_v1}
+\label{sec:conclusion}
+
+\section{Acknowledgement}
+\input{sections/ack_v1.tex}
+\label{sec:ack}
+
+%\subsubsection{Acknowledgements} Please place your acknowledgments at
+%the end of the paper, preceded by an unnumbered run-in heading (i.e.
+%3rd-level heading).
+
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+\bibliographystyle{splncs04}
+\bibliography{main}
+
+\appendix
+\setcounter{table}{0}
+\setcounter{figure}{0}
+% \renewcommand\thefigure{\thesection.\arabic{figure}}    
+% \renewcommand\thetable{\thesection.\arabic{table}}  
+\input{sections/supp.tex}
+\label{sec:supplemental}
+\end{document}
