@@ -261,7 +261,7 @@ Also make sure the following variables are correct:
 * `--logs`: Path of tensorboard logs
 
 ## How to Cite
-
+* Main paper MICCAI, 2023
 ```
 @misc{ghosh2023distilling,
       title={Distilling BlackBox to Interpretable models for Efficient Transfer Learning}, 
@@ -270,6 +270,15 @@ Also make sure the following variables are correct:
       eprint={2305.17303},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
+}
+```
+* Workshop paper published in Interpretable Machine Learning in Healthcare workshop, ICML 2023
+```
+@inproceedings{ghosh2023bridging,
+  title={Bridging the Gap: From Post Hoc Explanations to Inherently Interpretable Models for Medical Imaging},
+  author={Ghosh, Shantanu and Yu, Ke and Arabshahi, Forough and Batmanghelich, Kayhan},
+  booktitle={ICML 2023: Workshop on Interpretable Machine Learning in Healthcare},
+  year={2023}
 }
 ```
 
