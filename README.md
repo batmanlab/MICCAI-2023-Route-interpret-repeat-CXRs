@@ -9,7 +9,7 @@ Official PyTorch implementation of the paper <br/>
 [Kayhan Batmanghelich<sup>1</sup>](https://www.batman-lab.com/)
 <br/>
 <sup>1</sup>BU ECE, <sup>2</sup>Pitt ISP <br/>
-In [MICCAI, 2023](https://conferences.miccai.org/2023/en/), Early accept (acceptance rate ~ 14%) <br/>
+In [MICCAI, 2023](https://conferences.miccai.org/2023/en/), Early accept, top ~ 14% <br/>
 
 ## Table of Contents
 
