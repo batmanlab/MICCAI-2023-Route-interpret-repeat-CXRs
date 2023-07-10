@@ -94,6 +94,8 @@ python ./src/codebase/data_preprocessing/mimic-cxr/miccai-main/preprocessing/adj
 Step 3 will be the concepts for training MoIE-CXR. For more details please follow
 the [AGXNet Repository](https://github.com/batmanlab/AGXNet).
 
+Also, remove the disease label to be classified from the concepts. For example, to classify Pneumonia (disease label), Pneumonia will appear in the concepts produced in Step 3 as we are extracting anatomies and observations using Rad-graph. This is redundant. So in this case, manually remove Pneumonia from the concepts. 
+
 ## Training MoIE-CXR
 
 ### (a) Running MoIE-CXR
