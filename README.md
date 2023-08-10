@@ -96,7 +96,7 @@ the [AGXNet Repository](https://github.com/batmanlab/AGXNet).
 
 Also, remove the disease label to be classified from the concepts. For example, to classify Pneumonia (disease label), Pneumonia will appear in the concepts produced in Step 3 as we are extracting anatomies and observations using Rad-graph. This is redundant. So in this case, manually remove Pneumonia from the concepts. 
 
-If you don't want to run the pre-processing steps for MIMIC-CXR for the radgraph files to get the concepts, please refer to the following paths directly (these will be the outputs of the above 3 steps) and place the files in respective folders as indicated in code for training the blackbox, concept predictor (t) and experts in MoIE:
+If you don't want to run the pre-processing steps for MIMIC-CXR for the radgraph files to get the concepts, please refer to the following paths directly (these will be the outputs of the above 3 steps) and place the files in respective folders as indicated in code for training the blackbox, concept predictor (t) and experts in MoIE-CXR:
 
 | Variable  | Description                        | Paths                                                                                 |
 |-----------|------------------------------------|-------------------------------------------------------------------------------------|
