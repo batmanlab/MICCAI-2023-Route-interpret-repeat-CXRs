@@ -96,6 +96,17 @@ the [AGXNet Repository](https://github.com/batmanlab/AGXNet).
 
 Also, remove the disease label to be classified from the concepts. For example, to classify Pneumonia (disease label), Pneumonia will appear in the concepts produced in Step 3 as we are extracting anatomies and observations using Rad-graph. This is redundant. So in this case, manually remove Pneumonia from the concepts. 
 
+If you don't want to run the pre-processing steps for MIMIC-CXR for the radgraph files to get the concepts, please refer to the following paths directly (these will be the outputs of the above 3 steps) and place the files in respective folders as indicated in code for training the blackbox, concept predictor (t) and experts in MoIE:
+
+| Variable  | Description                        | Paths                                                                                 |
+|-----------|------------------------------------|-------------------------------------------------------------------------------------|
+| `--radgraph-adj-mtx-pickle-file` | radgraph adjacent matrix landmark - observation        | [landmark_observation_adj_mtx_v2.pickle](https://drive.google.com/file/d/1qdYMBL1zhpm2CyOohi8Id5qCHZxvVLH1/view?usp=drive_link)           |
+| `--radgraph-sids-npy-file`   | radgraph study ids       | [landmark_observation_sids_v2.npy](https://drive.google.com/file/d/1IV4L9ReNvKGZlbETIRnkGhI0BrhP8Nrx/view?usp=drive_link)                              |
+| `--radgraph-adj-mtx-npy-file`    | radgraph adjacent matrix landmark - observation | [landmark_observation_adj_mtx_v2.npy](https://drive.google.com/file/d/1dnXsFCRCVXb39WIsazJf_StUkM4tJbtW/view?usp=drive_link)             |
+| `--nvidia-bounding-box-file` | bounding boxes annotated for pneumonia and pneumothorax       | [mimic-cxr-annotation.csv](https://drive.google.com/file/d/1jeSF3ixR9hyis4sThFu9aozAFZD7BqOR/view?usp=drive_link) |
+| `--imagenome-radgraph-landmark-mapping-file`      | Landmark mapping between ImaGenome and RadGraph           | [landmark_mapping.json](https://drive.google.com/file/d/1a0hVwvS_WVKFfIrYQsSCCznZiCRxy-XC/view?usp=drive_link)                                      |
+
+
 ## Training MoIE-CXR
 
 ### (a) Running MoIE-CXR
