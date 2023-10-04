@@ -1,6 +1,6 @@
 # Distilling BlackBox to Interpretable models for Efficient Transfer Learning #
 
-### [Project Page](https:///shantanu-ai.github.io/projects/MICCAI-2023-MoIE-CXR) | [Paper (Coming soon)]() | [arXiv](https://arxiv.org/abs/2305.17303) | [Workshop paper (IMLH)](https://openreview.net/forum?id=sbOVNiSNY8) | [Video](https://www.youtube.com/watch?v=tG_Zr_8ton0) | [Poster](https://shantanu-ai.github.io/projects/MICCAI-2023-MoIE-CXR/static/data/Route-Interpret-Repeat-transfer-learning-miccai-23-poster-v1.pdf) | [Slides](https://shantanu-ai.github.io/projects/MICCAI-2023-MoIE-CXR/static/data/Route-interpret-repeat-transfer-learning-miccai-23-v3-long.pdf)
+### [Project Page](https:///shantanu-ai.github.io/projects/MICCAI-2023-MoIE-CXR) | [Paper](https://link.springer.com/chapter/10.1007/978-3-031-43895-0_59) | [arXiv](https://arxiv.org/abs/2305.17303) | [Workshop paper (IMLH)](https://openreview.net/forum?id=sbOVNiSNY8) | [Video](https://www.youtube.com/watch?v=tG_Zr_8ton0) | [Poster](https://shantanu-ai.github.io/projects/MICCAI-2023-MoIE-CXR/static/data/Route-Interpret-Repeat-transfer-learning-miccai-23-poster-v1.pdf) | [Slides](https://shantanu-ai.github.io/projects/MICCAI-2023-MoIE-CXR/static/data/Route-interpret-repeat-transfer-learning-miccai-23-v3-long.pdf)
 
 
 Official PyTorch implementation of the paper <br/>
