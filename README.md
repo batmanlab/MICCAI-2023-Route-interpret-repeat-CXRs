@@ -277,13 +277,25 @@ Also make sure the following variables are correct:
 ## How to Cite
 * Main paper MICCAI, 2023
 ```
-@misc{ghosh2023distilling,
-      title={Distilling BlackBox to Interpretable models for Efficient Transfer Learning}, 
-      author={Shantanu Ghosh and Ke Yu and Kayhan Batmanghelich},
-      year={2023},
-      eprint={2305.17303},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@InProceedings{10.1007/978-3-031-43895-0_59,
+author="Ghosh, Shantanu
+and Yu, Ke
+and Batmanghelich, Kayhan",
+editor="Greenspan, Hayit
+and Madabhushi, Anant
+and Mousavi, Parvin
+and Salcudean, Septimiu
+and Duncan, James
+and Syeda-Mahmood, Tanveer
+and Taylor, Russell",
+title="Distilling BlackBox to Interpretable Models for Efficient Transfer Learning",
+booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2023",
+year="2023",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="628--638",
+abstract="Building generalizable AI models is one of the primary challenges in the healthcare domain. While radiologists rely on generalizable descriptive rules of abnormality, Neural Network (NN) models suffer even with a slight shift in input distribution (e.g., scanner type). Fine-tuning a model to transfer knowledge from one domain to another requires a significant amount of labeled data in the target domain. In this paper, we develop an interpretable model that can be efficiently fine-tuned to an unseen target domain with minimal computational cost. We assume the interpretable component of NN to be approximately domain-invariant. However, interpretable models typically underperform compared to their Blackbox (BB) variants. We start with a BB in the source domain and distill it into a mixture of shallow interpretable models using human-understandable concepts. As each interpretable model covers a subset of data, a mixture of interpretable models achieves comparable performance as BB. Further, we use the pseudo-labeling technique from semi-supervised learning (SSL) to learn the concept classifier in the target domain, followed by fine-tuning the interpretable models in the target domain. We evaluate our model using a real-life large-scale chest-X-ray (CXR) classification dataset. The code is available at: https://github.com/batmanlab/MICCAI-2023-Route-interpret-repeat-CXRs.",
+isbn="978-3-031-43895-0"
 }
 ```
 * Workshop paper published in Interpretable Machine Learning in Healthcare workshop, ICML 2023
