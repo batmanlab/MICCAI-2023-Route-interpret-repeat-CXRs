@@ -75,20 +75,20 @@ To preprocess MIMIC-CXR to generate the concepts from the reports, follow the fo
 
 1. To generate itemized RadGraph examples, run:
 
-``` python
+``` bash
 python ./src/codebase/data_preprocessing/mimic-cxr/miccai-main/preprocessing/radgraph_itemized.py
 ```
 
 2. Run `./preprocessing/radgraph_parsed.py` To parse RadGraph relations, run:
 
-``` python
+``` bash
 python ./src/codebase/data_preprocessing/mimic-cxr/miccai-main/preprocessing/radgraph_parsed.py
 ```
 
 3. To create adjacency matrix that represents the relations between anatomical landmarks and observations mentioned in
    radiology reports, run:
 
-``` python
+``` bash
 python ./src/codebase/data_preprocessing/mimic-cxr/miccai-main/preprocessing/adj_matrix.py
 ```
 
@@ -172,7 +172,7 @@ each script in the folder [`./src/scripts/scripts_stanford_cxr`](./src/scripts/s
 If you want to generate the csvs with the samples of Stanford-CXR, here is an example command to generate and save the details of
 30000 samples from the training data of Stanford-CXR:
 
-```
+```bash
 python .src/codebase/prepare_df_SSL_main.py \
   --dataset="stanford_cxr" \
   --disease="cardiomegaly" \
@@ -224,7 +224,7 @@ These 4 numbers will add up to `--tot_samples` in the subsequent scripts in next
 Refer below for generating FOLs for the samples of Stanford-CXR where 15000 training samples were used for finetuning
 for the disease edema. Modify `tot_samples` and `disease` for other configurations.
 
-```
+```bash
 python ./src/codebase/FOL_cxr_domain_transfer.py --iteration 1 --disease "edema" --model "MoIE" --tot_samples 15000 --cov 0.4 --initialize_w_mimic "y"
 python ./src/codebase/FOL_cxr_domain_transfer.py --iteration 2 --disease "edema" --model "MoIE" --tot_samples 15000 --cov 0.3 --initialize_w_mimic "y"
 python ./src/codebase/FOL_cxr_domain_transfer.py --iteration 3 --disease "edema" --model "MoIE" --tot_samples 15000 --cov 0.3 --initialize_w_mimic "y"
