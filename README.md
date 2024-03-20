@@ -276,7 +276,7 @@ Also make sure the following variables are correct:
 
 ## How to Cite
 * Main paper MICCAI, 2023
-```
+```bibtex
 @InProceedings{10.1007/978-3-031-43895-0_59,
 author="Ghosh, Shantanu
 and Yu, Ke
@@ -299,7 +299,7 @@ isbn="978-3-031-43895-0"
 }
 ```
 * Workshop paper published in Interpretable Machine Learning in Healthcare workshop, ICML 2023
-```
+```bibtex
 @inproceedings{ghosh2023bridging,
   title={Bridging the Gap: From Post Hoc Explanations to Inherently Interpretable Models for Medical Imaging},
   author={Ghosh, Shantanu and Yu, Ke and Arabshahi, Forough and Batmanghelich, Kayhan},
